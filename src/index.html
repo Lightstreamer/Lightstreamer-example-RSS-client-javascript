@@ -1,0 +1,420 @@
+<!DOCTYPE html >
+
+<!--
+  LIGHTSTREAMER - www.lightstreamer.com
+  RSS News Reader Demo
+  
+  Copyright 2013 Weswit s.r.l.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />  
+  <title>Lightstreamer :: RSS News Reader Demo</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body vlink="#6c21b1" link="#0000ee" bgcolor="#ffffff" bottommargin="0" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+  <a href="https://github.com/Weswit/Lightstreamer-example-RSS-client-javascript"><img style="position: absolute; top: 0; right: 0; border: 0; z-index:1" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+  <div id="wrap">
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="262"></td>
+        <td width="692"></td>
+      </tr>
+      <tr>
+        <td valign="top" class="leftMenu">
+        <div class="leftMenu">
+          <a href="http://www.lightstreamer.com" target="_BLANK">
+          <img src="img/logo.png" alt="LIGHTSTREAMER" border="0" /></a><br />
+          <div class="leftMenu">
+            <!-- MENU -->
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+              <tr>
+                <td width="11">&nbsp;</td>
+                <td width="240" class="titles">Paste a feed url:</td>
+                <td width="11">&nbsp;</td>
+              </tr>
+              <tr height="50px">
+                <td width="11">&nbsp;</td>
+                <td width="240">
+                <form onsubmit="addCustomFeed(this.rssUrl.value);this.rssUrl.value='';return false;">
+                  <input id="rssUrl" name="rssUrl" type="text" size="25" value />
+                  <input type="submit" value="Add" />
+                </form>
+                </td>
+                <td width="11">&nbsp;</td>
+              </tr>
+              <tr>
+                <td width="11" height="1%">&nbsp;</td>
+                <td width="240" height="1%" valign="top">
+                <table width="100%" border="0" cellspacing="4" cellpadding="0">
+                  <tr>
+                    <td width="1%" valign="top" class="feedMenu">
+                    <a href="#" onclick="addRandomFeed();return false;">
+                    <img src="img/add.gif" alt="Add a random feed" width="17" height="17" border="0" /></a>
+                    </td>
+                    <td width="99%" valign="top" class="feedMenu">Add 
+                    a random feed </td>
+                  </tr>
+                </table>
+                </td>
+                <td width="11" height="1%">&nbsp;</td>
+              </tr>
+              <tr>
+                <td width="11" height="1%">&nbsp;</td>
+                <td width="240" height="1%">&nbsp;</td>
+                <td width="11" height="1%">&nbsp;</td>
+              </tr>
+              <tr>
+                <td width="11" height="1%">&nbsp;</td>
+                <td width="240" height="1%" class="titles">Subscribed feeds:
+                </td>
+                <td width="11" height="1%">&nbsp;</td>
+              </tr>
+              <tr>
+                <td width="11" height="1%">&nbsp;</td>
+                <td width="240" height="1%">&nbsp;</td>
+                <td width="11" height="1%">&nbsp;</td>
+              </tr>
+              <tr>
+                <td width="11" height="1%">&nbsp;</td>
+                <td width="240" height="1%" valign="top">
+                <table width="100%" border="0" cellspacing="4" cellpadding="0">
+                  <tr id="commandTable" data-source="lightstreamer">
+                    <td width="20" valign="top">
+                    <span><img src="img/del.gif" alt="Stop subscription" width="17" height="17" border="0"></span></td>
+                    <td width="220" valign="top">
+                    <div data-grid="commandTable" data-source="lightstreamer" class="feedNameLeft" data-field="titolo">
+                      Loading...</div>
+                    <div data-grid="commandTable" data-source="lightstreamer" class="message" data-field="controllo">
+                      Loading...</div>
+                    </td>
+                  </tr>
+                </table>
+                </td>
+                <td width="11" height="1%">&nbsp;</td>
+              </tr>
+            </table>
+            <!-- MENU END -->
+          </div>
+          <div class="leftFrame">
+            <img src="img/bg.jpg"></div>
+        </div>
+        </td>
+        <td valign="top">
+        <div id="divScroller">
+          <!-- TABLE -->
+          <table border="0" cellspacing="0" cellpadding="0">
+            <tr valign="middle">
+              <td height="87" class="mainTitle">RSS News Reader
+              <div class="note2">
+                <br />
+                No page refresh needed. All the news are delivered in real-time 
+                in true push mode.</div>
+              </td>
+            </tr>
+            
+            <!-- News block template -->
+            <tr id="news" data-source="lightstreamer">
+              <td>
+              <div class="newsBlock">
+                <span data-source="lightstreamer" data-field="feed" class="feedName"></span>
+                -
+                <span data-source="lightstreamer" data-field="data" class="dateTime"></span>
+                <div data-source="lightstreamer" data-field="titolo" class="newsTitle"></div>
+                <div data-source="lightstreamer" data-field="testo" class="newsBody"></div>
+                <span class="newsLink">>></span>
+                <span data-source="lightstreamer" data-field="link" class="newsLink"></span>
+              </div>
+              </td>
+            </tr>
+            
+          </table>
+          <!-- TABLE END -->
+        </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  
+<!-- load Lightstreamer libraries -->
+<script src="js/require.js"></script>
+<script src="js/lightstreamer.js"></script>
+<!-- JavaScript code specific of this application -->  
+<script type="text/javascript">
+
+  var clientRef = null;
+  var commEnabled = false;
+ 
+  ////////////////Variables
+  
+  var schemaCommand = ["key", "command", "titolo", "controllo"];
+  
+  var buttonTemplate1 = "<a href=\"#\" onclick=\"removeFeed('";
+  var buttonTemplate2 = "');return false;\"><img src=\"img/del.gif\" alt=\"Remove feed\" width=\"17\" height=\"17\" border=\"0\"></a>";
+  
+  var maxFeedHere=8;
+  var randFeeds = []; 
+  
+  randFeeds[0]="http://xkcd.com/rss.xml";
+  randFeeds[1]="http://rss.news.yahoo.com/rss/mostviewedwl";
+  randFeeds[2]="http://rss.news.yahoo.com/rss/mostviewedts";
+  randFeeds[3]="http://rss.news.yahoo.com/rss/mostviewedtc";
+  randFeeds[4]="http://rss.news.yahoo.com/rss/mostviewedod";
+  randFeeds[5]="http://rss.news.yahoo.com/rss/mostviewedsp";
+  randFeeds[6]="http://science.nasa.gov/rss.xml";
+  randFeeds[7]="http://p.moreover.com/cgi-local/page?index_bookreviews+rss";
+  randFeeds[8]="http://news.bbc.co.uk/rss/newsonline_uk_edition/world/rss091.xml";
+  randFeeds[9]="http://news.bbc.co.uk/rss/newsonline_uk_edition/business/rss091.xml";
+  randFeeds[10]="http://news.bbc.co.uk/rss/newsonline_uk_edition/health/rss091.xml";
+  randFeeds[11]="http://news.bbc.co.uk/rss/newsonline_uk_edition/entertainment/rss091.xml";
+  randFeeds[12]="http://feedproxy.google.com/geeksAreSexyTechnologyNews";
+  randFeeds[13]="http://www.nytimes.com/services/xml/rss/nyt/Technology.xml";
+  randFeeds[14]="http://www.nytimes.com/services/xml/rss/nyt/Sports.xml";
+  randFeeds[15]="http://www.nytimes.com/services/xml/rss/nyt/FashionandStyle.xml";
+  randFeeds[16]="http://www.nytimes.com/services/xml/rss/nyt/International.xml";
+
+  var subFeeds = {};
+  var subNum = 0;
+  var randomRSSUserName = "user" + Math.round( Math.random() * 1000 ) + "_" + new Date().getTime();
+
+  //////////////////////////Menu Handler
+
+  function firStart() {
+    resubscribeFeeds();
+  };
+  
+  function addCustomFeed(feedUrl) { 
+    if (subNum == maxFeedHere) {
+      alert ("You can subscribe up to "+maxFeedHere+" feeds in this demo");
+      return;
+    } else if (feedUrl == "") {
+      return;
+    } else if (isAlreadySubscribed(feedUrl)) {
+      alert("This feed is already subscribed to: " + feedUrl);
+      return;
+    } else {
+      subFeeds[feedUrl] = true;
+      subNum++;
+    }
+    
+    if (commEnabled) {
+      var mex = "RSS|ADD|"+randomRSSUserName+"|"+feedUrl;
+      clientRef.sendMessage(mex);
+    }
+  }
+  
+  function addRandomFeed() {
+    var protection = randFeeds.length * 2;
+    var protectionCount = 0;
+    var randomFeed = "";
+    
+    do {
+      randomFeed = randFeeds[Math.round ( Math.random() * (randFeeds.length-1))];
+       protectionCount++;
+    } while (isAlreadySubscribed(randomFeed) && protectionCount < protection);
+    
+    if (protectionCount >= protection) {
+      randomFeed = "";
+      for (var i = 0; i < randFeeds.length; i++) {
+        if (!isAlreadySubscribed(randFeeds[i])) {
+          randomFeed = randFeeds[i];
+          break;
+        }
+      }
+    }
+    if (randomFeed != "") {
+      addCustomFeed(randomFeed);
+    } else {
+      alert("No more random feeds to subscribe to");
+    }
+  }
+  
+  function removeFeed(feedUrl) {
+    if (feedUrl == "") {
+      return;
+    } else if (!isAlreadySubscribed(feedUrl)) {
+      //alert("This feed is no more subscribed to: " + feedUrl); //this is an error since user doesn't provide directly the feed url to remove
+      return;
+    }
+    
+    delete (subFeeds[feedUrl]);
+    subNum--;
+    
+    if (commEnabled) {
+      var mex = "RSS|REM|"+randomRSSUserName+"|"+feedUrl;
+      clientRef.sendMessage(mex);
+    }
+    
+  }
+
+  function isAlreadySubscribed(feed) {
+    return subFeeds[feed];
+  }
+  
+  function resubscribeFeeds() {
+    if (!commEnabled) {
+      return;
+    }
+    
+    for (var i in subFeeds) {
+      var mex = "RSS|ADD|"+randomRSSUserName+"|"+i;
+      clientRef.sendMessage(mex);
+    }
+  }
+  
+  //////////////////////////Event Handlers
+  
+  function formatValues(domNode, info) { //onChangingValues
+     if (info == null) {
+       return;
+     }
+     
+     if (info.getCellValue("link") != null) {
+       var cutl = cutLink(info.getCellValue("link"),125);
+       info.setCellValue("link",cutl); 
+     }
+     
+     info.setColdToHotTime(0);
+     info.setHotToColdTime(2000); 
+     info.setHotTime(2000); 
+     
+     info.setCellStyle("titolo","newsTitle","newsTitle");
+     info.setCellAttribute("titolo","#F7F6C2","white","backgroundColor"); 
+  }
+  
+  function formatInfo(domNode, info) {
+    if (info == null) {
+      return;
+    }
+    info.setCellStyle("titolo","feedNameLeft","feedNameLeft");
+    info.setCellStyle("controllo","message","message");
+    
+    if (info.getChangedFieldValue("command") != null) { //key field changes only at first update
+      var key = info.getChangedFieldValue("key");
+      var spans = domNode.getElementsByTagName("span");
+      spans[0].innerHTML = buttonTemplate1+key+buttonTemplate2;
+    }
+  }
+    
+  /////////////////////Formatting -> utils methods
+  
+  function cutLink(value, newMax) {
+    var max = 100;
+    if (newMax) {
+      max = newMax;
+    }
+    var start = value.indexOf(">");
+    var end = value.indexOf("</");
+    
+    if (start < end && start > -1) {
+      var textLink = value.slice(start+1,end-1);
+
+      if (textLink.length > max) {
+        textLink = textLink.slice(0,max) + "...";
+        var f = value.slice(0,start+1);
+        var e = value.slice(end,value.length);
+        value = f + textLink + e;
+      } 
+    }
+    return value;
+  }
+
+  /////////////////////////////////Table Handler
+  require(["js/lsClient","Subscription","DynaGrid"], 
+    function(lsClient,Subscription,DynaGrid) {
+    
+    var newsGrid = new DynaGrid("news",true);
+    var fields = [];
+    var item_news = "rss_items_"+randomRSSUserName;
+    var clientStatus = ""
+        
+    //enable/disable command based on the status of the connection
+    lsClient.addListener({
+      onStatusChange: function(newStatus) {
+        if ( (newStatus.indexOf("CONNECTED") >= 0) && (newStatus.indexOf("DISCONNECTED") < 0) )  {
+          commEnabled = true;
+        } else {
+          commEnabled = false;
+        }
+        clientStatus = newStatus;
+      }
+    });
+    
+    clientRef = lsClient;
+    
+    newsGrid.setNodeTypes(["div","span","img","a"]);
+    newsGrid.setHtmlInterpretationEnabled(true);
+    newsGrid.setAddOnTop(true);
+    newsGrid.setAutoCleanBehavior(true, false);
+    newsGrid.addListener({
+      onVisualUpdate: function(key,info,domNode) {
+        if (info == null) {
+          return;
+        }
+        formatValues(domNode,info);
+      }
+    });
+    
+    fields = newsGrid.extractFieldList();
+    subNews = new Subscription("DISTINCT",item_news,fields);
+    subNews.addListener({
+      onSubscription: function() {
+        firStart();
+      }
+    });
+    subNews.addListener(newsGrid);
+    subNews.setDataAdapter("RSS_ADAPTER");
+    subNews.setRequestedSnapshot(6);
+    
+    var cmdGrid = new DynaGrid("commandTable", true);
+    
+    cmdGrid.setAutoCleanBehavior(true, true);
+    cmdGrid.addListener({
+      onVisualUpdate: function(key,info,domNode) {
+        if (info == null) {
+          return;
+        }
+        formatInfo(domNode,info);
+      }
+    });
+    
+    subCommand = new Subscription("COMMAND","rss_info_"+randomRSSUserName,schemaCommand);
+    subCommand.addListener(cmdGrid);
+    subCommand.setDataAdapter("RSS_ADAPTER");
+    subCommand.setRequestedSnapshot("yes");
+    
+    lsClient.subscribe(subNews);  
+    lsClient.subscribe(subCommand); 
+    
+    //subscribe the first feed
+    addCustomFeed("http://www.theregister.co.uk/tonys/slashdot.rdf");
+    addCustomFeed("http://twitter.com/statuses/user_timeline/52505824.rss");
+    addCustomFeed("http://news.bbc.co.uk/rss/newsonline_uk_edition/sci/tech/rss091.xml");
+    addCustomFeed("http://feeds2.feedburner.com/DilbertDailyStrip");
+    
+    clientStatus = clientRef.getStatus();
+    if ( (clientStatus.indexOf("CONNECTED") >= 0) && (clientStatus.indexOf("DISCONNECTED") < 0) )  {
+      commEnabled = true;
+    }
+  }); 
+  
+</script>
+
+</body>
+
+</html>
