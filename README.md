@@ -35,7 +35,7 @@ Before you can run the demo some dependencies need to be solved:
 -  Get the require.js file form [requirejs.org](http://requirejs.org/docs/download.html) and put it in the src/js folder of the demo.
 
 You can deploy this demo in order to use the Lightstreamer server as Web server or in any external Web Server you are running. 
-If you choose the former case please create the folders "<LS_HOME>/pages/demos/RSSDemo" then copy here the contents of the /src folder of this project.<br>
+If you choose the former case please create the folder "<LS_HOME>/pages/demos/RSSDemo" then copy here the contents of the /src folder of this project.<br>
 The client demo configuration assumes that Lightstreamer Server, Lightstreamer Adapters and this client are launched on the same machine. Hence the [RSS_ADAPTER]() and [RSSMetadataAdapter]() Adapters have to be deployed in your local Lightstreamer server instance.<br>
 If you need to targeting a different Lightstreamer server please search this line:
 ```js
