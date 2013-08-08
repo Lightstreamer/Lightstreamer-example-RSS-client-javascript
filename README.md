@@ -36,7 +36,7 @@ Before you can run the demo some dependencies need to be solved:
 
 You can deploy this demo in order to use the Lightstreamer server as Web server or in any external Web Server you are running. 
 If you choose the former case please create the folder "<LS_HOME>/pages/demos/RSSDemo" then copy here the contents of the /src folder of this project.<br>
-The client demo configuration assumes that Lightstreamer Server, Lightstreamer Adapters and this client are launched on the same machine. Hence the [RSS_ADAPTER]() and [RSSMetadataAdapter]() Adapters have to be deployed in your local Lightstreamer server instance.<br>
+The client demo configuration assumes that Lightstreamer Server, Lightstreamer Adapters and this client are launched on the same machine. Hence the [RSS_ADAPTER](https://github.com/Weswit/Lightstreamer-example-RSS-adapter-java) and [RSSMetadataAdapter](https://github.com/Weswit/Lightstreamer-example-RSS-adapter-java) Adapters have to be deployed in your local Lightstreamer server instance.<br>
 If you need to targeting a different Lightstreamer server please search this line:
 ```js
 var lsClient = new LightstreamerClient(protocolToUse+"//localhost:8080","DEMO");
@@ -52,7 +52,7 @@ The demo are now ready to be launched.
 
 ## Lightstreamer Adapters needed by these demo clients ##
 
-* (To be add: Lightstreamer Race Telemetry Demo Adapter)
+* [Lightstreamer RSS Demo Adapter](https://github.com/Weswit/Lightstreamer-example-RSS-adapter-java)
 * [Lightstreamer Reusable Metadata Adapter in Java](https://github.com/Weswit/Lightstreamer-example-ReusableMetadata-adapter-java)
 
 ## Similar demo clients that may interest you ##
