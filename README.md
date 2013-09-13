@@ -50,7 +50,7 @@ The demo are now ready to be launched.
 
 # See Also #
 
-## Lightstreamer Adapters needed by these demo clients ##
+## Lightstreamer Adapters needed by this demo client ##
 
 * [Lightstreamer RSS Demo Adapter](https://github.com/Weswit/Lightstreamer-example-RSS-adapter-java)
 * [Lightstreamer Reusable Metadata Adapter in Java](https://github.com/Weswit/Lightstreamer-example-ReusableMetadata-adapter-java)
