@@ -7,7 +7,7 @@ This project includes a simple web client front-end example for the Lightstreame
 <table>
   <tr>
     <td style="text-align: left">
-      &nbsp;<a href="http://demos.lightstreamer.com/RSSDemo/" target="_blank"><img src="http://www.lightstreamer.com/img/demo/screen_rss.png"></a>&nbsp;
+      &nbsp;<a href="http://demos.lightstreamer.com/RSSDemo/" target="_blank"><img src="screen_rss.png"></a>&nbsp;
       
     </td>
     <td>
