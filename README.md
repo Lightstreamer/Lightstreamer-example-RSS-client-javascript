@@ -1,8 +1,6 @@
-# Lightstreamer RSS Demo Client for JavaScript #
+# Lightstreamer - RSS News Demo - HTML Client #
 
-This project includes a simple web client front-end example for the Lightstreamer RSS Demo Adapter.
-
-## RSS News Reader Demo ##
+This project includes a simple web client front-end example for the [Lightstreamer - RSS News Demo - Java SE Adapter](https://github.com/Weswit/Lightstreamer-example-RSS-adapter-java).
 
 <table>
   <tr>
@@ -52,13 +50,13 @@ The demo are now ready to be launched.
 
 ## Lightstreamer Adapters needed by this demo client ##
 
-* [Lightstreamer RSS Demo Adapter](https://github.com/Weswit/Lightstreamer-example-RSS-adapter-java)
-* [Lightstreamer Reusable Metadata Adapter in Java](https://github.com/Weswit/Lightstreamer-example-ReusableMetadata-adapter-java)
+* [Lightstreamer - RSS News Demo - Java SE Adapter](https://github.com/Weswit/Lightstreamer-example-RSS-adapter-java)
+* [Lightstreamer - Reusable Metadata Adapters- Java SE Adapter](https://github.com/Weswit/Lightstreamer-example-ReusableMetadata-adapter-java)
 
 ## Similar demo clients that may interest you ##
 
-* [Lightstreamer Chat Demo Client for JavaScript](https://github.com/Weswit/Lightstreamer-example-Chat-client-javascript)
-* [Lightstreamer Portfolio Demo Client for JavaScript](https://github.com/Weswit/Lightstreamer-example-Portfolio-client-javascript)
+* [Lightstreamer - Basic Chat Demo - HTML Client](https://github.com/Weswit/Lightstreamer-example-Chat-client-javascript)
+* [Lightstreamer - Portfolio Demos - HTML Clients](https://github.com/Weswit/Lightstreamer-example-Portfolio-client-javascript)
 
 # Lightstreamer Compatibility Notes #
 
