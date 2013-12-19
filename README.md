@@ -37,11 +37,11 @@ If you choose the former case please create the folder "<LS_HOME>/pages/demos/RS
 The client demo configuration assumes that Lightstreamer Server, Lightstreamer Adapters and this client are launched on the same machine. Hence the [RSS_ADAPTER](https://github.com/Weswit/Lightstreamer-example-RSS-adapter-java) and [RSSMetadataAdapter](https://github.com/Weswit/Lightstreamer-example-RSS-adapter-java) Adapters have to be deployed in your local Lightstreamer server instance.<br>
 If you need to targeting a different Lightstreamer server please search this line:
 ```js
-var lsClient = new LightstreamerClient(protocolToUse+"//localhost:8080","DEMO");
+var lsClient = new LightstreamerClient(protocolToUse+"//localhost:8080","RSSDEMO");
 ```
 in js/lsClient.js file and change it accordingly. For example if you want to target the adapter deployed in our server you should substitute with this:
 ```js
-var lsClient = new LightstreamerClient(protocolToUse+"//push.lightstreamer.com","DEMO");
+var lsClient = new LightstreamerClient(protocolToUse+"//push.lightstreamer.com","RSSDEMO");
 ```
 <br>
 The demo are now ready to be launched.
