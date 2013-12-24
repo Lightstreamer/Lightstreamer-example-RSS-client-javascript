@@ -1,5 +1,7 @@
 # Lightstreamer - RSS News Demo - HTML Client #
 
+<!-- START DESCRIPTION lightstreamer-example-rss-client-javascript -->
+
 This project includes a simple web client front-end example for the [Lightstreamer - RSS News Demo - Java Adapter](https://github.com/Weswit/Lightstreamer-example-RSS-adapter-java).
 
 <table>
@@ -22,6 +24,7 @@ The demo includes the following client-side technologies:
 * A [Subscription](http://www.lightstreamer.com/docs/client_javascript_uni_api/Subscription.html) containing 1 item, subscribed to in <b>DISTINCT</b> mode feeding a [DynaGrid](http://www.lightstreamer.com/docs/client_javascript_uni_api/DynaGrid.html) containing the news.
 * A [Subscription](http://www.lightstreamer.com/docs/client_javascript_uni_api/Subscription.html) containing 1 item, subscribed to in <b>COMMAND</b> mode feeding a [DynaGrid](http://www.lightstreamer.com/docs/client_javascript_uni_api/DynaGrid.html) containing the list of feeds currently subscribed to.
 
+<!-- END DESCRIPTION lightstreamer-example-rss-client-javascript -->
 # Deploy #
 
 Before you can run the demo some dependencies need to be solved:
@@ -50,8 +53,11 @@ The demo are now ready to be launched.
 
 ## Lightstreamer Adapters needed by this demo client ##
 
+<!-- START RELATED_ENTRIES -->
 * [Lightstreamer - RSS News Demo - Java Adapter](https://github.com/Weswit/Lightstreamer-example-RSS-adapter-java)
 * [Lightstreamer - Reusable Metadata Adapters- Java Adapter](https://github.com/Weswit/Lightstreamer-example-ReusableMetadata-adapter-java)
+
+<!-- END RELATED_ENTRIES -->
 
 ## Similar demo clients that may interest you ##
 
