@@ -4,18 +4,8 @@
 
 This project includes a simple web client front-end example for the [Lightstreamer - RSS News Demo - Java Adapter](https://github.com/Weswit/Lightstreamer-example-RSS-adapter-java).
 
-<table>
-  <tr>
-    <td style="text-align: left">
-      &nbsp;<a href="http://demos.lightstreamer.com/RSSDemo/" target="_blank"><img src="screen_rss.png"></a>&nbsp;
-      
-    </td>
-    <td>
-      &nbsp;An online demonstration is hosted on our servers at:<br>
-      &nbsp;<a href="http://demos.lightstreamer.com/RSSDemo/" target="_blank">http://demos.lightstreamer.com/RSSDemo</a>
-    </td>
-  </tr>
-</table>
+[![screenshot](screen_rss_large.png)](http://demos.lightstreamer.com/RSSDemo)<br>
+An online demonstration is hosted on our servers at: [http://demos.lightstreamer.com/RSSDemo](http://demos.lightstreamer.com/RSSDemo)
 
 The RSS News Reader Demo is a simple news aggregator that allows the user to subscribe to several RSS feeds and have the news pushed in real-time without refreshing the page or polling the server under the hood.<br>
 This page uses the <b>JavaScript Client API for Lightstreamer</b> to handle the communications with Lightstreamer Server and the demo starts with some feeds already subscribed to. You can add your own feeds or click on "+" to add random feeds.<br>
@@ -51,7 +41,7 @@ The demo are now ready to be launched.
 
 # See Also #
 
-## Lightstreamer Adapters needed by this demo client ##
+## Lightstreamer Adapters Needed by This Demo Client ##
 
 <!-- START RELATED_ENTRIES -->
 * [Lightstreamer - RSS News Demo - Java Adapter](https://github.com/Weswit/Lightstreamer-example-RSS-adapter-java)
@@ -59,7 +49,7 @@ The demo are now ready to be launched.
 
 <!-- END RELATED_ENTRIES -->
 
-## Similar demo clients that may interest you ##
+## Related Projects ##
 
 * [Lightstreamer - Basic Chat Demo - HTML Client](https://github.com/Weswit/Lightstreamer-example-Chat-client-javascript)
 * [Lightstreamer - Portfolio Demos - HTML Clients](https://github.com/Weswit/Lightstreamer-example-Portfolio-client-javascript)
