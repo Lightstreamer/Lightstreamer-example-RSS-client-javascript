@@ -43,7 +43,6 @@ in `lsClient.js` and change it accordingly. For example if you want to target th
 var lsClient = new LightstreamerClient(protocolToUse+"//push.lightstreamer.com","RSSDEMO");
 ```
 <br>
-
 The demo is now ready to be launched.
 
 ## See Also
