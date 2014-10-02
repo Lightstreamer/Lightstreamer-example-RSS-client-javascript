@@ -27,18 +27,18 @@ If you want to install a version of this demo pointing to your local Lightstream
 
 * Note that, as prerequisite, the [Lightstreamer - RSS News Demo - Java Adapter](https://github.com/Weswit/Lightstreamer-example-RSS-adapter-java) has to be deployed on your local Lightstreamer Server instance. Please check out that project and follow the installation instructions provided with it.
 * Launch Lightstreamer Server.
-* Get the `lightstreamer.js` file from the [Lightstreamer 5 Colosseo distribution](http://www.lightstreamer.com/download) and put it in the `src/js` folder of the demo (if that is the case, please create it). Alternatively you can build a `lightstreamer.js` file from the 
+* Get the `lightstreamer.js` file from the [Lightstreamer 5 Colosseo distribution](http://www.lightstreamer.com/download) and put it in the `src/js` folder of the demo (if that is the case, please create it). Alternatively, you can build a `lightstreamer.js` file from the 
   [online generator](http://www.lightstreamer.com/latest/Lightstreamer_Allegro-Presto-Vivace_5_1_Colosseo/Lightstreamer/DOCS-SDKs/sdk_client_javascript/tools/generator.html).
-  In that case be sure to include the LightstreamerClient, Subscription, DynaGrid, and StatusWidget modules and to use the "Use AMD" version.
+  In that case, be sure to include the LightstreamerClient, Subscription, DynaGrid, and StatusWidget modules and to use the "Use AMD" version.
 * Get the `require.js` file form [requirejs.org](http://requirejs.org/docs/download.html) and put it in the `src/js` folder of the demo.
 
-You can deploy this demo in order to use the Lightstreamer server as Web server or in any external Web Server you are running. 
-If you choose the former case please create the folders `<LS_HOME>/pages/demos/RSSDemo` then copy here the contents of the `src` folder of this project.<br>
-The client demo configuration assumes that Lightstreamer Server, Lightstreamer Adapters and this client are launched on the same machine. If you need to targeting a different Lightstreamer server please search this line:
+You can deploy this demo to use the Lightstreamer server as Web server or in any external Web Server you are running. 
+If you choose the former case, please create the folders `<LS_HOME>/pages/demos/RSSDemo`, then copy here the contents of the `src` folder of this project.<br>
+The client demo configuration assumes that Lightstreamer Server, Lightstreamer Adapters, and this client are launched on the same machine. If you need to target a different Lightstreamer server, please search this line:
 ```js
 var lsClient = new LightstreamerClient(protocolToUse+"//localhost:"+portToUse,"RSSDEMO");
 ```
-in `lsClient.js` and change it accordingly. For example if you want to target the adapter deployed in our online servers you should substitute with this:
+in `lsClient.js` and change it accordingly. For example, if you want to target the adapter deployed in our online servers, you should substitute with this:
 ```js
 var lsClient = new LightstreamerClient(protocolToUse+"//push.lightstreamer.com","RSSDEMO");
 ```
