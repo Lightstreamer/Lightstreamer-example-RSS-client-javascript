@@ -6,8 +6,8 @@ This project includes a simple web client front-end example for the [Lightstream
 
 ## Live Demo
 
-[![screenshot](screen_rss_large.png)](http://demos.lightstreamer.com/RSSDemo)<br>
-### [![](http://demos.lightstreamer.com/site/img/play.png) View live demo](http://demos.lightstreamer.com/RSSDemo)
+[![screenshot](screen_rss_large.png)](https://demos.lightstreamer.com/RSSDemo/)<br>
+### [![](http://demos.lightstreamer.com/site/img/play.png) View live demo](https://demos.lightstreamer.com/RSSDemo/)
 
 ## Details
 
