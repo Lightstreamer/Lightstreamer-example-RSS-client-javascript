@@ -28,9 +28,6 @@ If you want to install a version of this demo pointing to your local Lightstream
 * Note that, as prerequisite, the [Lightstreamer - RSS News Demo - Java Adapter](https://github.com/Lightstreamer/Lightstreamer-example-RSS-adapter-java) has to be deployed on your local Lightstreamer Server instance. Please check out that project and follow the installation instructions provided with it.
 * Launch Lightstreamer Server.
 * Get the `lightstreamer.min.js` file from [npm](https://www.npmjs.com/package/lightstreamer-client-web) or [unpkg](https://unpkg.com/lightstreamer-client-web/lightstreamer.min.js) and put it in the `src/js` folder of the demo (if that is the case, please create it).
-  Alternatively, you can generate a customized lightstreamer.min.js library containing only the classes you actually use;
-  see the build instructions on the [GitHub page](https://github.com/Lightstreamer/Lightstreamer-lib-client-javascript#building).
-  In that case, be sure to include the LightstreamerClient, Subscription, DynaGrid, and ConnectionSharing, StatusWidget modules.
 * Get the `require.js` file form [requirejs.org](http://requirejs.org/docs/download.html) and put it in the `src/js` folder of the demo.
 
 You can deploy this demo to use the Lightstreamer server as Web server or in any external Web Server you are running. 
