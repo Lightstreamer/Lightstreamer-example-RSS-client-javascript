@@ -306,10 +306,13 @@
     info.setCellStyle("titolo","feedNameLeft","feedNameLeft");
     info.setCellStyle("controllo","message","message");
     
-    if (info.getChangedFieldValue("command") != null) { //key field changes only at first update
+    if (info.getChangedFieldValue("command") != null) {
+      //key field changes only at first update
       var key = info.getChangedFieldValue("key");
-      var spans = domNode.getElementsByTagName("span");
-      spans[0].innerHTML = buttonTemplate1+key+buttonTemplate2;
+      if (key != null) {
+        var spans = domNode.getElementsByTagName("span");
+        spans[0].innerHTML = buttonTemplate1+key+buttonTemplate2;
+      }
     }
   }
     
