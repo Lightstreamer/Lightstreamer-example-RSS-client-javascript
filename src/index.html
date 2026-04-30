@@ -172,23 +172,21 @@
   var maxFeedHere=8;
   var randFeeds = []; 
   
-  randFeeds[0]="http://xkcd.com/rss.xml";
-  randFeeds[1]="http://rss.news.yahoo.com/rss/mostviewedwl";
-  randFeeds[2]="http://rss.news.yahoo.com/rss/mostviewedts";
-  randFeeds[3]="http://rss.news.yahoo.com/rss/mostviewedtc";
-  randFeeds[4]="http://rss.news.yahoo.com/rss/mostviewedod";
-  randFeeds[5]="http://rss.news.yahoo.com/rss/mostviewedsp";
-  randFeeds[6]="http://science.nasa.gov/rss.xml";
-  randFeeds[7]="http://p.moreover.com/cgi-local/page?index_bookreviews+rss";
-  randFeeds[8]="http://news.bbc.co.uk/rss/newsonline_uk_edition/world/rss091.xml";
-  randFeeds[9]="http://news.bbc.co.uk/rss/newsonline_uk_edition/business/rss091.xml";
-  randFeeds[10]="http://news.bbc.co.uk/rss/newsonline_uk_edition/health/rss091.xml";
-  randFeeds[11]="http://news.bbc.co.uk/rss/newsonline_uk_edition/entertainment/rss091.xml";
-  randFeeds[12]="http://feedproxy.google.com/geeksAreSexyTechnologyNews";
-  randFeeds[13]="http://themeforest.net/feeds/new-wordpress-items.atom";
-  randFeeds[14]="http://www.nytimes.com/services/xml/rss/nyt/Sports.xml";
-  randFeeds[15]="http://www.nytimes.com/services/xml/rss/nyt/FashionandStyle.xml";
-  randFeeds[16]="http://www.nytimes.com/services/xml/rss/nyt/International.xml";
+  randFeeds[0]="https://feeds.bbci.co.uk/news/rss.xml";
+  randFeeds[1]="https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml";
+  randFeeds[2]="https://feeds.npr.org/1001/rss.xml";
+  randFeeds[3]="https://www.aljazeera.com/xml/rss/all.xml";
+  randFeeds[4]="https://feeds.washingtonpost.com/rss/world";
+  randFeeds[5]="https://feeds.arstechnica.com/arstechnica/index";
+  randFeeds[6]="https://www.theverge.com/rss/index.xml";
+  randFeeds[7]="https://www.wired.com/feed/rss";
+  randFeeds[8]="https://techcrunch.com/feed/";
+  randFeeds[9]="https://hnrss.org/frontpage";
+  randFeeds[10]="https://www.nasa.gov/rss/dyn/breaking_news.rss";
+  randFeeds[11]="https://www.nature.com/nature.rss";
+  randFeeds[12]="https://rss.slashdot.org/Slashdot/slashdotMain";
+  randFeeds[13]="https://www.engadget.com/rss.xml";
+  randFeeds[14]="https://www.zdnet.com/news/rss.xml";
 
   var subFeeds = {};
   var subNum = 0;
@@ -407,11 +405,10 @@
     lsClient.subscribe(subCommand); 
     
     //subscribe the first feed
-    addCustomFeed("http://www.theregister.co.uk/tonys/slashdot.rdf");
-    addCustomFeed("http://www.nytimes.com/services/xml/rss/nyt/Technology.xml");
-    addCustomFeed("http://news.bbc.co.uk/rss/newsonline_uk_edition/sci/tech/rss091.xml");
-    addCustomFeed("http://feeds2.feedburner.com/DilbertDailyStrip");
-    
+    addCustomFeed("https://www.theguardian.com/world/rss");
+    addCustomFeed("https://www.theregister.co.uk/tonys/slashdot.rdf");
+    addCustomFeed("https://www.tomshardware.com/feeds.xml");
+
     clientStatus = clientRef.getStatus();
     if ( (clientStatus.indexOf("CONNECTED") >= 0) && (clientStatus.indexOf("DISCONNECTED") < 0) )  {
       commEnabled = true;
